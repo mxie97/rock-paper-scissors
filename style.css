@@ -1,0 +1,26 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    text-align: center;
+}
+
+.header {
+    
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    background-color: whitesmoke;
+}
+
+.button img {
+    height: 200px;
+    width: 200px;
+}

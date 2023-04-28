@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="button-container">
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <span class="header">
+        <h1>Rock Paper Scissors</h1>
+        <h3>Choose your warrior:</h3>
+    </span>
+
+    <div class="button-container">
+    <button class="button"><img id="rock" src="images/Rocky.png"></button>
+    <button class="button"><img id="paper" src="images/paper.png"></button>
+    <button class="button"><img id="scissors" src="images/scissors.jpg"></button>
     </div>
 
-    <div id="round-result"></div>
-    <div id="scoreboard"></div>
-    <div id="winner-announcement"></div>
+    <div class="main-content">
+    <span id="round-result"></span>
+    <span id="scoreboard"></span>
+    <span id="winner-announcement"></span>
+    </div>
 
     <script src="script.js"></script>
 </body>
