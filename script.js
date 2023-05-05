@@ -1,16 +1,53 @@
-function displayRunningScore(score) {
-    const scoreboard = document.querySelector('#scoreboard');
-    scoreboard.textContent = score;
+function displayRunningScore(playerRunningScore, computerRunningScore) {
+    const playerScoreDisplay = document.querySelector('#player-score');
+    playerScoreDisplay.textContent = playerRunningScore;
+    const computerScoreDisplay = document.querySelector('#computer-score');
+    computerScoreDisplay.textContent = computerRunningScore;
 }
 
-function displayRoundResult(roundResult) {
-    const roundResultContainer = document.querySelector('#round-result');
-    roundResultContainer.textContent = roundResult;
+function displayRoundResult(playerSelection, computerSelection, outcome) {
+    if (playerSelection == "rock") {
+        playerSelection = "✊";
+    } else if (playerSelection == "paper") {
+        playerSelection = "✋";
+    } else {
+        playerSelection = "✌";
+    }
+
+    if (computerSelection == "rock") {
+        computerSelection = "✊";
+    } else if (computerSelection == "paper") {
+        computerSelection = "✋";
+    } else {
+        computerSelection = "✌";
+    }
+    
+    const computerSign = document.querySelector('#computer-sign');
+    computerSign.textContent = computerSelection;
+    const playerSign = document.querySelector('#player-sign');
+    playerSign.textContent = playerSelection;
+    const roundResult = document.querySelector('#round-result');
+    if (outcome == "tie") {
+        roundResult.textContent = "You tied this round."
+    } else if (outcome == "player-loss") {
+        roundResult.textContent = "You lost this round :("
+    } else {
+        roundResult.textContent = "You won this round!"
+    }
 }
 
 function displayWin(winner) {
-    const winnerContainer = document.querySelector('#winner-announcement');
-    winnerContainer.textContent = winner;
+    const endgameModal = document.querySelector("#endgame-modal");
+    const overlay = document.querySelector('#end-overlay')
+    const endgameMessageContainer = document.querySelector('#endgame-message');
+    if (winner == "computer") {
+        endgameMessageContainer.textContent = "You lose :(";
+    } else {
+        endgameMessageContainer.textContent = "You won! ;)"
+    }
+    endgameModal.classList.add('active');
+    overlay.classList.add('active');
+    
 }
 
 function getComputerChoice() {
@@ -43,23 +80,23 @@ function playRound(e) {
     playerSelection = e.target.id;
 
     if (playerSelection === computerSelection) {
-        displayRoundResult(`Tie! You chose ${playerSelection} and the Computer chose ${computerSelection}.`);
+        displayRoundResult(playerSelection, computerSelection, "tie");
         keepScore(0,0);
     } else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) {
-        displayRoundResult(`You lost. You chose ${playerSelection} and the Computer chose ${computerSelection}. ${computerSelection} beats ${playerSelection}.`);
+        displayRoundResult(playerSelection, computerSelection, "player-loss");
         keepScore(0,1);
     } else {
-        displayRoundResult(`You won! You chose ${playerSelection} and the Computer chose ${computerSelection}. ${playerSelection} beats ${computerSelection}.`);
+        displayRoundResult(playerSelection, computerSelection, "player-win");
         keepScore(1,0);
     }
 
-    displayRunningScore(`Your score is ${userScore}. Computer's score is ${computerScore}`);
+    displayRunningScore(userScore, computerScore);
 
     if (userScore == 5 || computerScore == 5) {
         if (userScore < computerScore) {
-            displayWin("Computer won!");
+            displayWin("computer");
         } else {
-            displayWin("You won!");
+            displayWin("player");
         }
     } 
 

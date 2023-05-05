@@ -8,22 +8,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <span class="header">
+    <div class="header">
         <h1>Rock Paper Scissors</h1>
-        <h3>Choose your warrior:</h3>
-    </span>
+        <h3>First to 5 wins!</h3>
+    </div>
+
 
     <div class="button-container">
-    <button class="button"><img id="rock" src="images/Rocky.png"></button>
-    <button class="button"><img id="paper" src="images/paper.png"></button>
-    <button class="button"><img id="scissors" src="images/scissors.jpg"></button>
+        <button class="button" id="rock">✊</button>
+        <button class="button" id="paper">✋</button>
+        <button class="button" id="scissors">✌</button>
     </div>
 
-    <div class="main-content">
-    <span id="round-result"></span>
-    <span id="scoreboard"></span>
-    <span id="winner-announcement"></span>
+    <div class="scoreboard-container">
+        <div class="score-box">
+            <div class="sign" id="player-sign">?</div>
+            <div>You:</div>
+            <div class="score" id="player-score">0</div>
+        </div>
+        <div class="score-box">
+            <div class="sign" id="computer-sign">?</div>
+            <div>Computer:</div>
+            <div class="score" id="computer-score">0</div>
+        </div>
     </div>
+    
+    <div class="main-content">
+        <div id="round-result"></div>
+        <div id="scoreboard"></div>
+    </div>
+    
+
+
+    <div class="overlay" id="end-overlay"></div>
+
+
+    <div class="modal" id="endgame-modal">
+        <h3 id="endgame-message"></h3>
+        <div>
+            <button id="restart-button">Play again?</button>
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
 </body>
