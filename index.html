@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="rock_favicon.png">
 </head>
 <body>
     <div class="header">
         <h1>Rock Paper Scissors</h1>
         <h3>First to 5 wins!</h3>
     </div>
-
 
     <div class="button-container">
         <button class="button" id="rock">✊</button>
@@ -33,23 +34,17 @@
         </div>
     </div>
     
-    <div class="main-content">
-        <div id="round-result"></div>
-        <div id="scoreboard"></div>
-    </div>
-    
-
-
+    <div id="round-result"></div>
+ 
     <div class="overlay" id="end-overlay"></div>
-
-
     <div class="modal" id="endgame-modal">
-        <h3 id="endgame-message"></h3>
-        <div>
-            <button id="restart-button">Play again?</button>
-        </div>
+        <h4 id="endgame-message"></h4>
+        <div><button class="button" id="restart-button">Play again?</button></div>
     </div>
 
+    <footer>
+        mxie97 <a href="https://github.com/mxie97" target="_blank"><i class="fa fa-github fa_custom"></i></a>
+    </footer>
 
     <script src="script.js"></script>
 </body>

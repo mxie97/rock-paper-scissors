@@ -2,14 +2,14 @@ body {
     font-family:'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
-    margin: 50px;
+    margin: 0;
     text-align: center;
     background-color: ;
     color: ;
 }
 
 .header {
-    margin: 0 auto 100px auto;
+    margin: 50px auto 100px auto;
 }
 
 .scoreboard-container {
@@ -38,7 +38,9 @@ body {
     height: 150px;
 }
 
-
+.button:hover {
+    transform: scale(1.05);
+}
 
 .sign {
     font-size: 50px;
@@ -46,24 +48,23 @@ body {
 }
 
 .modal {
-    position: fixed;
     z-index: 1;
-
+    width: 250px;
+    height: 130px;
     left: 50%;
-    top: 40%;
-    width: 200px;
-    padding: 30px;
-    background-color: greenyellow;
+    top: 50%;
+    position: fixed;
+    background-color:lavender;
     font-size: 20px;
     transform: scale(0);
     transition: 200ms ease-in-out;
-
-    
+    border-radius: 10px;
 }
 
 .modal.active {
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
     margin: 0;
+
 }
 
 .overlay {
@@ -73,10 +74,35 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: .5;
+    opacity: .8;
     display: none;
 }
 
 .overlay.active {
     display: flex;
+}
+
+#restart-button {
+    font-size: small;
+    font-family: inherit;
+    width: 120px;
+    height: 25px;
+}
+
+footer {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: auto auto 10px;
+}
+
+.fa_custom {
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
 }
