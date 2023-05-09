@@ -41,7 +41,7 @@ function displayRoundResult(playerSelection, computerSelection, outcome) {
         computerSelection = "✊";
     } else if (computerSelection == "paper") {
         computerSelection = "✋";
-    } else if (playerSelection == "scissors") {
+    } else if (computerSelection == "scissors") {
         computerSelection = "✌️";
     } else {
         computerSelection = "?";
