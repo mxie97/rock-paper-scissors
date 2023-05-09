@@ -31,16 +31,20 @@ function displayRoundResult(playerSelection, computerSelection, outcome) {
         playerSelection = "✊";
     } else if (playerSelection == "paper") {
         playerSelection = "✋";
+    } else if (playerSelection == "scissors") {
+        playerSelection = "✌️";
     } else {
-        playerSelection = "✌";
+        playerSelection = "?";
     }
 
     if (computerSelection == "rock") {
         computerSelection = "✊";
     } else if (computerSelection == "paper") {
         computerSelection = "✋";
+    } else if (playerSelection == "scissors") {
+        computerSelection = "✌️";
     } else {
-        computerSelection = "✌";
+        computerSelection = "?";
     }
     
     computerSign.textContent = computerSelection;
